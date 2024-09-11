@@ -112,7 +112,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-//Componente Dialog
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AlertDialogExample(
@@ -287,11 +286,11 @@ suspend fun loadProgress(updateProgress: (Float) -> Unit) {
         delay(100)
     }
 }
-//@Composable
-//@Preview
-//fun vistaProgreso(){
-//    LinearDeterminateIndicator()
-//}
+@Composable
+@Preview
+fun vistaProgreso(){
+    LinearDeterminateIndicator()
+}
 
 //Ejemplo de DropDownMenu
 
@@ -349,7 +348,7 @@ fun DropdownMenuExample(){
     }
 
 }
-//@Preview(showBackground = true)
+@Preview(showBackground = true)
 @Composable
 fun DropPreview(){
     LAB04Theme {
