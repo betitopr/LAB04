@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -57,7 +56,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.filled.MoreVert
-import androidx.compose.material3.DividerDefaults.color
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
@@ -86,24 +84,21 @@ class MainActivity : ComponentActivity() {
                 ){
 
                 }
-                /*Primer Componente*/
-                AlertDialogExample(
-                    onDismissRequest = { /*TODO*/ },
-                    onConfirmation = { /*TODO*/ },
-                    dialogTitle = "Podemos hackearte",
-                    dialogText = "Necesitamos el control de tu dispositivo por el cual pedimos tu acceso",
-                    icon = painterResource(id = R.drawable.ic_launcher_foreground)
-                )
-                /*Segundo Componente*/
+//                AlertDialogExample(
+//                    onDismissRequest = { /*TODO*/ },
+//                    onConfirmation = { /*TODO*/ },
+//                    dialogTitle = "Podemos hackearte",
+//                    dialogText = "Necesitamos el control de tu dispositivo por el cual pedimos tu acceso",
+//                    icon = painterResource(id = R.drawable.ic_launcher_foreground)
+//                )
 //                DialogWithImage(
 //                    onDismissRequest = { /*TODO*/ },
 //                    onConfirmation = { /*TODO*/ },
 //                    painter = painterResource(id = R.drawable.lavanda),
 //                    imageDescription ="Paisaje"
 //                )
-                /*Tercer Componente*/
 //                LinearDeterminateIndicator()
-//                DropdownMenuExample()
+                DropdownMenuExample()
 
 
             }
@@ -113,7 +108,6 @@ class MainActivity : ComponentActivity() {
 }
 
 //Componente Dialog
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AlertDialogExample(
     onDismissRequest: () -> Unit,
@@ -141,36 +135,29 @@ fun AlertDialogExample(
                     onConfirmation()
                 }
             ) {
-                Text("Confirmar")
+                Text("Confirm")
             }
         },
         dismissButton = {
-            Button(
+            TextButton(
                 onClick = {
                     onDismissRequest()
                 }
             ) {
-                Text("Disminuir")
+                Text("Dismiss")
             }
-        },
-        containerColor = Color(0xFFB0E0E6),
-
-        modifier = Modifier
-            .background(color = Color(0xFFB0E0E6),)
-            .fillMaxWidth()
+        }
     )
 }
-
-@Preview
 @Composable
 fun Preview_AlertDialog(){
     LAB04Theme {
         AlertDialogExample(
             onDismissRequest = { /*TODO*/ },
             onConfirmation = { /*TODO*/ },
-            dialogTitle = "Podemos hackearte?",
+            dialogTitle = "Podemos hackearte",
             dialogText = "Necesitamos el control de tu dispositivo por el cual pedimos tu acceso",
-            icon = painterResource(id = R.drawable.hacker)
+            icon = painterResource(id = R.drawable.ic_launcher_foreground)
         )
     }
 }
@@ -191,8 +178,6 @@ fun DialogWithImage(
                 .height(375.dp)
                 .padding(16.dp),
             shape = RoundedCornerShape(16.dp),
-
-
         ) {
             Column(
                 modifier = Modifier
@@ -234,7 +219,7 @@ fun DialogWithImage(
         }
     }
 }
-//@Preview
+
 @Composable
 fun Dialogo2(){
     DialogWithImage(
@@ -349,7 +334,7 @@ fun DropdownMenuExample(){
     }
 
 }
-//@Preview(showBackground = true)
+@Preview(showBackground = true)
 @Composable
 fun DropPreview(){
     LAB04Theme {
