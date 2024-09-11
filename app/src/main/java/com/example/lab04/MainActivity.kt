@@ -56,6 +56,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.outlined.Favorite
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
@@ -303,7 +304,8 @@ fun DropdownMenuExample(){
     ){
         ExposedDropdownMenuBox(
             expanded = isExpanded,
-            onExpandedChange ={isExpanded=!isExpanded} )
+            onExpandedChange ={isExpanded=!isExpanded} ,
+            )
         {
             TextField(
                 modifier = Modifier.menuAnchor(),
@@ -323,10 +325,18 @@ fun DropdownMenuExample(){
                     onClick = { selectedText=list[index]
                     isExpanded=false
                     },
+                        leadingIcon = {
+                            Icon(
+                                Icons.Outlined.Favorite,
+                                contentDescription = null,
+                                tint = androidx.compose.ui.graphics.Color.Red
+                            )
+                        },
                     contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
                     )
                 }
                 }
+
 
         }
         Text(text = "Currenly selected:$selectedText")
