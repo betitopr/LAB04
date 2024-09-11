@@ -69,6 +69,7 @@ import androidx.compose.ui.input.key.Key.Companion.Four
 import androidx.compose.ui.input.key.Key.Companion.One
 import androidx.compose.ui.input.key.Key.Companion.Three
 import androidx.compose.ui.input.key.Key.Companion.Two
+import androidx.compose.ui.unit.sp
 
 
 class MainActivity : ComponentActivity() {
@@ -98,7 +99,8 @@ class MainActivity : ComponentActivity() {
 //                    imageDescription ="Paisaje"
 //                )
 //                LinearDeterminateIndicator()
-                DropdownMenuExample()
+//                DropdownMenuExample()
+                ViewHolaCurso()
 
 
             }
@@ -341,3 +343,26 @@ fun DropPreview(){
         DropdownMenuExample()
     }
 }
+
+//Ejemplo de Git 1
+@Composable
+fun ViewHolaCurso() {
+    Column(
+        modifier = Modifier
+            .fillMaxWith()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Welcome to the Course!",
+            fontSize = 28.sp,
+            fontWeight = FontWeigh.Bold
+        )
+        Spacer(modifier = Modifier.heigh(16.dp))
+        Text(
+            text = "Hello, Student!",
+            fontSize = 20.xD
+
+    }
+}
+
